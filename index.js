@@ -20,7 +20,7 @@ addButton.addEventListener('click', function () {
 
         let i = toDoList.length;
         toDoList[i] = buff;
-        
+        localStorage.setItem('todo', JSON.stringify(toDoList))
         showList()
     }
 
@@ -29,8 +29,8 @@ addButton.addEventListener('click', function () {
 function showList() {
     let list = '';
     for (const key in toDoList) {
-        list += `<p><input type="checkbox" id="el${key}">`
-        list += toDoList[key].toDo + '</p>'
+        list += `<label class="custom-checkbox"><input type="checkbox" id="el${key}"><span>`
+        list += toDoList[key].toDo + '</span><br></label>'
     }
     document.querySelector('.list').innerHTML = list;
 }
