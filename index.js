@@ -3,7 +3,6 @@ var toDoList = [];
 if (localStorage.getItem('todo')) {
     toDoList = JSON.parse(localStorage.getItem('todo'))
     showList()
-    console.log(toDoList);
 }
 
 
@@ -41,7 +40,6 @@ deleteButton.addEventListener('click', function () {
         if (element.checked) {
             let parent = element.parentElement;
             parent.parentElement.removeChild(parent)
-            console.log(element.parentElement);
             toDoList[key] = null
         }
     }
